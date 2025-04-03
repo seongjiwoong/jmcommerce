@@ -100,24 +100,6 @@
     let score = 0;
 
     function nextQuestion(questionNumber) {
-        if (questionNumber == 1) {
-            score += 1; // 활발하게 다가간다 클릭 시 점수 증가
-        } else if (questionNumber == 2) {
-            score += 0; // 조용히 지켜본다 클릭 시 점수 증가 안 함
-        } else if (questionNumber == 3) {
-            score += 1; // 밖에서 신나게 활동한다 클릭 시 점수 증가
-        } else if (questionNumber == 4) {
-            score += 0; // 집에서 편히 쉬는 걸 좋아한다 클릭 시 점수 증가 안 함
-        } else if (questionNumber == 5) {
-            score += 1; // 고기나 육류 관련 간식 클릭 시 점수 증가
-        } else if (questionNumber == 6) {
-            score += 0; // 채소나 과일 같은 건강한 간식 클릭 시 점수 증가 안 함
-        } else if (questionNumber == 7) {
-            score += 1; // 애교 많은 강아지 클릭 시 점수 증가
-        } else if (questionNumber == 8) {
-            score += 0; // 독립적인 강아지 클릭 시 점수 증가 안 함
-        }
-
         if (questionNumber == 1 || questionNumber == 2) {
             document.getElementById("quiz").style.display = "none";
             document.getElementById("quiz2").style.display = "block";
@@ -138,7 +120,9 @@
         document.getElementById("result").style.display = "block";
         
         if (answer == 1) {
-            score += 1; // 신나게 뛰어다닌다 클릭 시 점수 증가
+            score += 1;
+        } else {
+            score += 0;
         }
 
         if (score <= 2) {
@@ -146,4 +130,10 @@
         } else if (score > 2 && score <= 4) {
             document.getElementById("dogResult").innerText = "당신은 활발한 포메라니안 스타일! 🎾 신나게 활동하는 걸 좋아하는 당신은 사람들과의 교류를 즐겨요.";
         } else {
-            document.getElementById("dogResult").innerText = "당신은 씩씩한 비글 스타일! 🐕
+            document.getElementById("dogResult").innerText = "당신은 씩씩한 비글 스타일! 🐕 활발하고 모험을 좋아하는 성격을 가졌어요.";
+        }
+    }
+</script>
+
+</body>
+</html>
